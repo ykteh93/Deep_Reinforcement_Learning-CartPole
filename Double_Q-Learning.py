@@ -16,17 +16,17 @@ env.seed(seed)
 np.random.seed(seed)
 random.seed(seed)
 
-discount = 0.99																				# discount rate of the rewards
-batch_size = 500																			# size of mini-batch for training 
-replay_size = 500000																		# size of Experience Replay
-maximum_episode_length = 200																# length of episodes (same as default setting)
-replay_buffer = deque()																		# store the details of experience in Experience Replay
-test_episode = 10																			# number of episodes for testing
-total_episode = 1000																		# number of episodes for training
-number_hidden = 100																			# number of units for the hidden layer
-learning_rate = 0.0005																		# learning rate for the optimizater 
-state_dimension = env.observation_space.shape[0]											# number of observations which will be received
-action_dimension = env.action_space.n														# number of actions which can be taken
+discount = 0.99											# discount rate of the rewards
+batch_size = 500										# size of mini-batch for training 
+replay_size = 500000										# size of Experience Replay
+maximum_episode_length = 200									# length of episodes (same as default setting)
+replay_buffer = deque()										# store the details of experience in Experience Replay
+test_episode = 10										# number of episodes for testing
+total_episode = 1000										# number of episodes for training
+number_hidden = 100										# number of units for the hidden layer
+learning_rate = 0.0005										# learning rate for the optimizater 
+state_dimension = env.observation_space.shape[0]						# number of observations which will be received
+action_dimension = env.action_space.n								# number of actions which can be taken
 Total_Move = Total_Loss = Total_Return = Total_Episode = cummulative_loss = np.array([])	# store the details for plotting the graph
 
 
@@ -238,19 +238,18 @@ with tf.Session() as sess:
 	plt.title('Plot of Performance Over %d Episodes' %(total_episode))
 	plt.xlabel('Episodes')
 	plt.ylabel('Performance (Mean Discounted Return)')
-	plt.savefig('A8_Plot of Performance Over %d Episodes.png' %(total_episode))
+	plt.savefig('Plot of Performance Over %d Episodes.png' %(total_episode))
 
 	plt.figure(1)
 	plt.plot(Total_Episode, Total_Move)
 	plt.title('Plot of Performance Over %d Episodes' %(total_episode))
 	plt.xlabel('Episodes')
 	plt.ylabel('Performance (Episode Length)')
-	plt.savefig('A8_Plot of Performance (Episode Length) Over %d Episodes.png' %(total_episode))
+	plt.savefig('Plot of Performance (Episode Length) Over %d Episodes.png' %(total_episode))
 
 	plt.figure(2)
 	plt.plot(Total_Episode, Total_Loss)
 	plt.title('Plot of Loss Over %d Episodes' %(total_episode))
 	plt.xlabel('Episodes')
 	plt.ylabel('Training Loss')
-	plt.savefig('A8_Plot of Loss Over %d Episodes.png' %(total_episode))
-
+	plt.savefig('Plot of Loss Over %d Episodes.png' %(total_episode))
