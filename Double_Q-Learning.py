@@ -86,7 +86,7 @@ def train_Q_network():
 
 
 # run the evaluation at every 20 episodes in order to monitor the performance during training 
-def evaluation():
+def evaluation(episode, cummulative_loss):
 	global Total_Return, Total_Move, Total_Loss, Total_Episode
 	episode_length = 0
 	total_return = np.array([])
@@ -218,7 +218,7 @@ with tf.Session() as sess:
 
 		# run evaluation every 20 episodes
 		if (episode + 1) % 20 == 0:
-			evaluation()
+			evaluation(episode, cummulative_loss)
 
 	print("Average Episode Length: %f" % (np.mean(Total_Move)))
 	print("Average Return: %f" % (np.mean(Total_Return)))
