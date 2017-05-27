@@ -6,7 +6,7 @@ This project is similar to <a href="https://github.com/ykteh93/Deep_Reinforcemen
 
 <br>
 <dl>
-  <dt>The details is as follow:</dt>
+  <dt>The details of this project is as follow:</dt>
   <ul>
   <li>The task is to keep a pole balanced indefinitely.</li>
   <li>This environment has a 4 dimensional observations and two discrete actions (left, right).</li>
