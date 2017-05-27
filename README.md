@@ -2,7 +2,7 @@
 Double Q-Learning to play CartPole
 
 This project is similar to <a href="https://github.com/ykteh93/Deep_Reinforcement_Learning-Atari">my other project</a> on Atari games, except double Q-learning is implemented here.
-* Q-learning uses same values to select and to evaluate, while double Q-learning decouples that with two separate networks and update one at random for each experience. <a href="https://arxiv.org/pdf/1509.06461.pdf">The details can be read here.</a>
+* Q-learning uses same values to select and to evaluate, while double Q-learning decouples that with two separate networks and update one at random for each experience. <a href="https://papers.nips.cc/paper/3964-double-q-learning.pdf">The details can be read here.</a>
 
 <br>
 <dl>
