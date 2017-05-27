@@ -124,18 +124,18 @@ def evaluation():
 
 # initialize the weights and biases for all networks
 weights = {	'first_Q_Learning_hidden_layer': tf.Variable(tf.truncated_normal([state_dimension, number_hidden])),
-			'first_Q_Learning_output_layer': tf.Variable(tf.truncated_normal([number_hidden, action_dimension])),
-			'second_Q_Learning_hidden_layer': tf.Variable(tf.truncated_normal([state_dimension, number_hidden])),
-			'second_Q_Learning_output_layer': tf.Variable(tf.truncated_normal([number_hidden, action_dimension])),
-			'stationary_target_hidden_layer': tf.Variable(tf.truncated_normal([state_dimension, number_hidden])),
-			'stationary_target_output_layer': tf.Variable(tf.truncated_normal([number_hidden, action_dimension]))}
+		'first_Q_Learning_output_layer': tf.Variable(tf.truncated_normal([number_hidden, action_dimension])),
+		'second_Q_Learning_hidden_layer': tf.Variable(tf.truncated_normal([state_dimension, number_hidden])),
+		'second_Q_Learning_output_layer': tf.Variable(tf.truncated_normal([number_hidden, action_dimension])),
+		'stationary_target_hidden_layer': tf.Variable(tf.truncated_normal([state_dimension, number_hidden])),
+		'stationary_target_output_layer': tf.Variable(tf.truncated_normal([number_hidden, action_dimension]))}
 
 biases = {	'first_Q_Learning_hidden_layer': tf.Variable(tf.constant(0.01,shape = [number_hidden])),
-			'first_Q_Learning_output_layer': tf.Variable(tf.constant(0.01,shape = [action_dimension])),
-			'second_Q_Learning_hidden_layer': tf.Variable(tf.constant(0.01,shape = [number_hidden])),
-			'second_Q_Learning_output_layer': tf.Variable(tf.constant(0.01,shape = [action_dimension])),
-			'stationary_target_hidden_layer': tf.Variable(tf.constant(0.01,shape = [number_hidden])),
-			'stationary_target_output_layer': tf.Variable(tf.constant(0.01,shape = [action_dimension]))}
+		'first_Q_Learning_output_layer': tf.Variable(tf.constant(0.01,shape = [action_dimension])),
+		'second_Q_Learning_hidden_layer': tf.Variable(tf.constant(0.01,shape = [number_hidden])),
+		'second_Q_Learning_output_layer': tf.Variable(tf.constant(0.01,shape = [action_dimension])),
+		'stationary_target_hidden_layer': tf.Variable(tf.constant(0.01,shape = [number_hidden])),
+		'stationary_target_output_layer': tf.Variable(tf.constant(0.01,shape = [action_dimension]))}
 
 # update weights and biases of First Q-Learning
 update_Q1_weight_hidden = weights['stationary_target_hidden_layer'].assign(weights['first_Q_Learning_hidden_layer'])
