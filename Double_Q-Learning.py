@@ -10,12 +10,6 @@ import matplotlib.pyplot as plt
 from collections import deque
 env = gym.make('CartPole-v0')
 
-seed = 600
-tf.set_random_seed(seed)
-env.seed(seed)
-np.random.seed(seed)
-random.seed(seed)
-
 discount = 0.99											# discount rate of the rewards
 batch_size = 500										# size of mini-batch for training 
 replay_size = 500000										# size of Experience Replay
