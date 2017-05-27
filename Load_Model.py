@@ -10,21 +10,20 @@ import matplotlib.pyplot as plt
 from collections import deque
 env = gym.make('CartPole-v0')
 
-discount = 0.99											# discount rate of the rewards
-batch_size = 500										# size of mini-batch for training 
-replay_size = 500000										# size of Experience Replay
-maximum_episode_length = 200									# length of episodes (same as default setting)
-replay_buffer = deque()										# store the details of experience in Experience Replay
-test_episode = 10										# number of episodes for testing
-number_hidden = 100										# number of units for the hidden layer
-learning_rate = 0.0005										# learning rate for the optimizater 
-state_dimension = env.observation_space.shape[0]						# number of observations which will be received
-action_dimension = env.action_space.n								# number of actions which can be taken
+discount = 0.99						# discount rate of the rewards
+batch_size = 500					# size of mini-batch for training 
+replay_size = 500000					# size of Experience Replay
+maximum_episode_length = 200				# length of episodes (same as default setting)
+replay_buffer = deque()					# store the details of experience in Experience Replay
+test_episode = 10					# number of episodes for testing
+number_hidden = 100					# number of units for the hidden layer
+learning_rate = 0.0005					# learning rate for the optimizater 
+state_dimension = env.observation_space.shape[0]	# number of observations which will be received
+action_dimension = env.action_space.n			# number of actions which can be taken
 
 
 # run the evaluation at every 20 episodes in order to monitor the performance during training 
 def evaluation():
-	global Total_Return, Total_Move, Total_Loss, Total_Episode
 	episode_length = 0
 	total_return = np.array([])
 
@@ -104,7 +103,4 @@ with tf.Session() as sess:
 	sess.run(init)
 	saver = tf.train.Saver()
 	saver.restore(sess, "./model_Double_Q-Learning/Double_Q-Learning")
-
 	evaluation()
-
-
