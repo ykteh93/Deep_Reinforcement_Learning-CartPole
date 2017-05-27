@@ -16,7 +16,6 @@ env.seed(seed)
 np.random.seed(seed)
 random.seed(seed)
 
-
 discount = 0.99											# discount rate of the rewards
 batch_size = 500										# size of mini-batch for training 
 replay_size = 500000										# size of Experience Replay
