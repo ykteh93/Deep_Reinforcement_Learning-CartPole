@@ -33,6 +33,7 @@ def evaluation():
 
 		# step through the environment until maximum episode length is reached (default is 200)
 		for j in range(maximum_episode_length):
+			env.render()
 
 			# select best action using both network and step through the environment
 			first_q_out = sess.run(Q1_output, feed_dict={state: [observation]})
