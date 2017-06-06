@@ -14,7 +14,7 @@ This project is similar to <a href="https://github.com/ykteh93/Deep_Reinforcemen
   <ul>
   <li>The task is to keep a pole balanced indefinitely.</li>
   <li>This environment has a 4 dimensional observations and two discrete actions (left, right).</li>
-  <li>To study the effect of sparse rewards, reward is modified to be 0 on non-terminating steps and -1 on termination.</li>
+  <li>To study the effect of sparse rewards, default reward is modified to be 0 on non-terminating steps and -1 on termination.</li>
   <li>Architecture: input &rarr; hidden layer (100 units) + RELU &rarr; linear layer &rarr; state-action value function</li>
   <li>The saved model after training are included (Run the Load_Model.py file to evaluate).</li>
   </ul>
